@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3"
+             xmlns:Syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" 
+             x:Class="App3.Page1">
+
+    <ContentPage.BindingContext>
+        <local:Data/>
+    </ContentPage.BindingContext>
+
+    <Syncfusion:SfDataGrid x:Name="dataGrid"
+                           AutoGenerateColumns="True"
+                           ItemsSource="{Binding Statistics }"
+                           DefaultColumnWidth="140">
+        
+        <Syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+            <Syncfusion:GridTextColumn HeaderText="STATE" 
+                                   MappingName="State" />
+
+
+            <Syncfusion:GridTextColumn HeaderText="TOTAL IGR ₦"
+                                   MappingName="totalIgr" />
+            
+            
+            <Syncfusion:GridTextColumn HeaderText  ="% SHARE"
+                                       MappingName="share" />
+            
+            
+            <Syncfusion:GridTextColumn HeaderText="RANK"
+                                   MappingName="rank" />
+            
+        </Syncfusion:SfDataGrid.Columns>
+
+        <Syncfusion:SfDataGrid AllowSorting="True" />
+
+
+
+    </Syncfusion:SfDataGrid>
+</ContentPage>
